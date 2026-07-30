@@ -17,7 +17,7 @@ export default function Hero() {
             <br />
             <span className="text-green-700">Confidence</span> in Math!
             <br />
-            
+
             One Student
             <br />
             at a Time!
@@ -54,7 +54,7 @@ export default function Hero() {
               -right-56
               top-1/2
               h-[900px]
-              w-[1030px]
+              w-[1010px]
               -translate-y-1/2
               rounded-l-[900px]
               bg-[#0F8A42]
