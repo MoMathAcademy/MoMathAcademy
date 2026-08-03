@@ -1,59 +1,76 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-white">
-      <div className="mx-auto grid max-w-[1400px] grid-cols-1 items-center gap-8 px-8 py-16 lg:grid-cols-[48%_52%] lg:px-10">
+<section className="relative overflow-hidden bg-white pt-4">
+        <div className="mx-auto grid max-w-[1400px] grid-cols-1 items-center gap-14 px-8 py-16 lg:grid-cols-[52%_48%] lg:px-10">
 
         {/* LEFT */}
-        <div className="max-w-[560px]">
+        <div className="relative z-10 max-w-[650px] lg:-ml-16">
 
-          <p className="mb-5 text-xs font-bold uppercase tracking-[0.35em] text-green-700">
-            Personalized Math Tutoring
-          </p>
+          {/* Small Heading */}
+          <p className="relative left-[-48px] mb-5 text-center text-xs font-bold uppercase tracking-[0.35em] text-green-700">
+  Personalized Math Tutoring
+</p>
 
-          <h1 className="text-[46px] font-black leading-[1.02] tracking-[-1.2px] text-gray-900 xl:text-[54px]">
-            Building
-            <br />
-            <span className="text-green-700">Confidence</span> in Math,
-            <br />
-            One Student
-            <br />
-            at a Time.
+          {/* Main Heading */}
+          <h1 className="text-[42px] font-extrabold leading-[1.05] tracking-[-1.5px] text-gray-900 xl:text-[52px]">
+            <span className="block">
+              Building Confidence in
+            </span>
+
+     <span className="relative left-[-50px] block text-center text-[54px] font-black uppercase tracking-[0.12em] text-green-700 xl:text-[64px]">
+  MATH
+            </span>
+
+            <span className="block">
+            "One Student at a Time"
+            </span>
           </h1>
 
-          <p className="mt-6 max-w-[520px] text-[18px] leading-8 text-gray-600">
-            Professional tutoring for Elementary Math, Middle School Math,
-            Algebra I (Honors), Geometry (Honors), Algebra II (Honors),
-            Trigonometry, Pre-Calculus, Calculus I, SAT, ACT,
+          {/* Description */}
+          <p className="mx-auto -ml-2 mt-5 max-w-[560px] text-center text-[19px] leading-9 text-gray-600">
+            Personalized tutoring for Elementary, Middle, and High School
+            Mathematics, including Algebra, Geometry, SAT/ACT,
             Placement Tests, and EOC preparation.
           </p>
 
-          <div className="mt-9 flex flex-wrap gap-4">
+          {/* Buttons */}
+          <div className="mt-8 flex flex-wrap justify-center gap-4 lg:-ml-34">
 
-            <button className="rounded-full bg-green-700 px-6 py-3 text-[15px] font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-green-800">
+            <Link
+              href="/contact"
+              className="rounded-full bg-green-700 px-7 py-3.5 text-[15px] font-semibold text-white shadow-lg shadow-green-700/20 transition-all duration-300 hover:-translate-y-1 hover:bg-green-800 hover:shadow-xl"
+            >
               Schedule a Session
-            </button>
+            </Link>
 
-            <button className="rounded-full border-2 border-green-700 px-6 py-3 text-[15px] font-semibold text-green-700 transition duration-300 hover:bg-green-50">
+            <Link
+              href="/about"
+              className="rounded-full border-2 border-green-700 bg-white px-7 py-3.5 text-[15px] font-semibold text-green-700 transition-all duration-300 hover:-translate-y-1 hover:bg-green-50"
+            >
               Learn More
-            </button>
+            </Link>
 
           </div>
 
         </div>
 
         {/* RIGHT */}
-        <div className="relative h-[620px] overflow-visible">
+        <div className="relative h-[640px] overflow-visible">
 
-          {/* Green Background */}
+          {/* Background Glow */}
+          <div className="absolute right-16 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-green-200/30 blur-3xl" />
+
+          {/* Green Shape */}
           <div
             className="
               absolute
               -right-56
               top-1/2
-              h-[900px]
-              w-[950px]
+              h-[800px]
+              w-[980px]
               -translate-y-1/2
               rounded-l-[900px]
               bg-[#0F8A42]
@@ -70,8 +87,9 @@ export default function Hero() {
             className="
               object-contain
               object-right
-              scale-[1.06]
-              translate-x-16
+              scale-[1.08]
+              translate-x-12
+              select-none
             "
           />
 

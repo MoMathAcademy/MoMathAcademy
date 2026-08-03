@@ -1,3 +1,4 @@
+import Testimonials from "./components/testimonials/Testimonials";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 
@@ -7,7 +8,7 @@ import {
   Globe,
   ClipboardList,
   TrendingUp,
-  Trophy,
+  Handshake,
 } from "lucide-react";
 
 export default function Home() {
@@ -31,9 +32,9 @@ export default function Home() {
           </h2>
 
           <p className="mx-auto mt-5 max-w-3xl text-xl leading-8 text-gray-600">
-            Combining engineering, classroom experience, and personalized
-            instruction to help students build confidence and achieve lasting
-            success in mathematics.
+            Combining engineering, classroom expertise, and personalized
+            instruction to help students build confidence, master mathematics,
+            and achieve lasting academic success.
           </p>
 
         </div>
@@ -44,108 +45,107 @@ export default function Home() {
 
           {/* Card 1 */}
 
-          <div className="rounded-3xl border border-gray-100 bg-white p-8 text-center shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+          <div className="flex h-[220px] flex-col justify-center rounded-3xl border border-gray-100 bg-white px-8 py-6 text-center shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
 
-            <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-green-50">
+            <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-green-50">
               <Users className="h-7 w-7 text-green-700" />
             </div>
 
-            <h3 className="text-2xl font-bold tracking-tight">
-              10+ Years
+            <h3 className="text-xl font-bold tracking-tight">
+              10+ Years Teaching Experience
             </h3>
 
             <p className="mt-3 text-gray-500">
-              Teaching Experience
+              Classroom & Private Tutoring
             </p>
 
           </div>
 
           {/* Card 2 */}
 
-          <div className="rounded-3xl border border-gray-100 bg-white p-8 text-center shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+          <div className="flex h-[220px] flex-col justify-center rounded-3xl border border-gray-100 bg-white px-8 py-6 text-center shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
 
-            <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-green-50">
+            <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-green-50">
               <GraduationCap className="h-7 w-7 text-green-700" />
             </div>
 
-            <h3 className="text-2xl font-bold tracking-tight">
-              B.S. Engineering
+            <h3 className="text-xl font-bold tracking-tight">
+              USF Engineering Graduate
             </h3>
 
             <p className="mt-3 text-gray-500">
-              University of South Florida
+              Bachelor's Degree in Industrial Engineering
             </p>
 
           </div>
 
           {/* Card 3 */}
 
-          <div className="rounded-3xl border border-gray-100 bg-white p-8 text-center shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+          <div className="flex h-[220px] flex-col justify-center rounded-3xl border border-gray-100 bg-white px-8 py-6 text-center shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
 
-            <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-green-50">
+            <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-green-50">
               <Globe className="h-7 w-7 text-green-700" />
             </div>
 
-            <h3 className="text-2xl font-bold tracking-tight">
-              IB MYP
+            <h3 className="text-xl font-bold tracking-tight">
+              IB MYP Mathematics Teacher
             </h3>
 
             <p className="mt-3 text-gray-500">
-              IB Mathematics Educator
+              Experienced Middle & High School Educator
             </p>
 
           </div>
+                    {/* Card 4 */}
 
-          {/* Card 4 */}
+          <div className="flex h-[220px] flex-col justify-center rounded-3xl border border-gray-100 bg-white px-8 py-6 text-center shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
 
-          <div className="rounded-3xl border border-gray-100 bg-white p-8 text-center shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition duration-300 hover:-translate-y-2 hover:shadow-xl">
-
-            <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-green-50">
+            <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-green-50">
               <ClipboardList className="h-7 w-7 text-green-700" />
             </div>
 
-            <h3 className="text-2xl font-bold tracking-tight">
-              SAT & ACT
+            <h3 className="text-xl font-bold tracking-tight">
+              SAT & ACT Test Prep
             </h3>
 
             <p className="mt-3 text-gray-500">
-              College Test Prep
+              College Admissions Preparation
             </p>
 
           </div>
 
           {/* Card 5 */}
 
-          <div className="rounded-3xl border border-gray-100 bg-white p-8 text-center shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+          <div className="flex h-[220px] flex-col justify-center rounded-3xl border border-gray-100 bg-white px-8 py-6 text-center shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
 
-            <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-green-50">
+            <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-green-50">
               <TrendingUp className="h-7 w-7 text-green-700" />
             </div>
 
-            <h3 className="text-2xl font-bold tracking-tight">
-              90%+
+            <h3 className="text-xl font-bold tracking-tight">
+              90%+ EOC Pass Rate
             </h3>
 
             <p className="mt-3 text-gray-500">
-              EOC Pass Rate
+              Helping Students Achieve Excellence
             </p>
 
           </div>
 
           {/* Card 6 */}
 
-          <div className="rounded-3xl border border-gray-100 bg-white p-8 text-center shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+          <div className="flex h-[220px] flex-col justify-center rounded-3xl border border-gray-100 bg-white px-8 py-6 text-center shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
 
-            <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-green-50">
-              <Trophy className="h-7 w-7 text-green-700" />
+            <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-green-50">
+              <Handshake className="h-7 w-7 text-green-700" />
             </div>
 
-            <h3 className="text-2xl font-bold tracking-tight">
-              Algebra Bowl
+            <h3 className="text-xl font-bold tracking-tight">
+              100+ Students Tutored
             </h3>
 
             <p className="mt-3 text-gray-500">
-              Winning Coach
+              Building Confidence Since 2013
             </p>
 
           </div>
@@ -153,7 +153,7 @@ export default function Home() {
         </div>
 
       </section>
-
+<Testimonials />
     </main>
   );
 }
