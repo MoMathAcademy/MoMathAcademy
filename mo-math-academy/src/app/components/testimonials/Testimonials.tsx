@@ -28,6 +28,7 @@ export default function Testimonials() {
         .select("*")
         .eq("approved", true)
         .order("created_at", { ascending: false });
+        alert(JSON.stringify(data, null, 2));
 
       if (error) {
         console.error(error);
