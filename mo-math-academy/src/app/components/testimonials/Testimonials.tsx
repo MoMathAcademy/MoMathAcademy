@@ -73,10 +73,16 @@ export default function Testimonials() {
       ? parentsToDisplay
       : studentsToDisplay;
 
+  // DEBUG (temporary)
+  console.log("Parent testimonials:", parentTestimonials.length);
+  console.log("Sample parents:", sampleParentTestimonials.length);
+  console.log("All testimonials:", allTestimonials.length);
+
   const testimonialsToShow = showAll
     ? allTestimonials
     : allTestimonials.slice(0, 3);
-      return (
+
+  return (
     <section
       id="testimonials"
       className="bg-white py-28 scroll-mt-28"
