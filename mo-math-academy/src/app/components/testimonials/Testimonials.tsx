@@ -28,10 +28,6 @@ export default function Testimonials() {
         .select("*")
         .eq("approved", true)
         .order("created_at", { ascending: false });
-        alert("Rows: " + (data?.length ?? 0));
-        console.log("SUPABASE DATA:", data);
-console.log("SUPABASE ERROR:", error);
-
 
       if (error) {
         console.error(error);
@@ -171,7 +167,6 @@ console.log("SUPABASE ERROR:", error);
 
           </div>
 
-          {/* View All */}
           {allTestimonials.length > 3 && (
             <div className="mt-14 flex justify-center">
 
