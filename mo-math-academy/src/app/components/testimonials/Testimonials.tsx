@@ -73,11 +73,6 @@ export default function Testimonials() {
       ? parentsToDisplay
       : studentsToDisplay;
 
-  // DEBUG (temporary)
-  console.log("Parent testimonials:", parentTestimonials.length);
-  console.log("Sample parents:", sampleParentTestimonials.length);
-  console.log("All testimonials:", allTestimonials.length);
-
   const testimonialsToShow = showAll
     ? allTestimonials
     : allTestimonials.slice(0, 3);
@@ -90,7 +85,6 @@ export default function Testimonials() {
       <div className="mx-auto max-w-7xl px-8">
 
         {/* Heading */}
-
         <div className="text-center">
           <h2 className="text-5xl font-black tracking-tight text-gray-900">
             What Families Are Saying
@@ -103,7 +97,6 @@ export default function Testimonials() {
         </div>
 
         {/* Toggle */}
-
         <div className="mt-14 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
 
           <div className="inline-flex rounded-full bg-gray-100 p-1 shadow-inner">
@@ -150,7 +143,6 @@ export default function Testimonials() {
         </div>
 
         {/* Testimonials */}
-
         <div
           key={activeTab}
           className="mt-16 animate-fade"
@@ -158,7 +150,6 @@ export default function Testimonials() {
           <div className="grid gap-8 lg:grid-cols-3">
 
             {testimonialsToShow.map((testimonial) => (
-
               <TestimonialCard
                 key={testimonial.id}
                 quote={testimonial.review}
@@ -172,15 +163,12 @@ export default function Testimonials() {
                 rating={testimonial.rating}
                 onClick={() => setSelectedReview(testimonial)}
               />
-
             ))}
 
           </div>
 
           {/* View All */}
-
           {allTestimonials.length > 3 && (
-
             <div className="mt-14 flex justify-center">
 
               <button
@@ -198,7 +186,6 @@ export default function Testimonials() {
               </button>
 
             </div>
-
           )}
 
         </div>
