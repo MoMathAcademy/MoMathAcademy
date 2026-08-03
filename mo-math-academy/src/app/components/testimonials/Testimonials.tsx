@@ -28,7 +28,7 @@ export default function Testimonials() {
         .select("*")
         .eq("approved", true)
         .order("created_at", { ascending: false });
-        alert(JSON.stringify(data, null, 2));
+        alert("Rows: " + (data?.length ?? 0));
         console.log("SUPABASE DATA:", data);
 console.log("SUPABASE ERROR:", error);
 
