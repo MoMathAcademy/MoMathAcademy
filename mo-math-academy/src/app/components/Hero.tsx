@@ -3,41 +3,41 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-<section className="relative overflow-hidden bg-white pt-4">
-        <div className="mx-auto grid max-w-[1400px] grid-cols-1 items-center gap-14 px-8 py-16 lg:grid-cols-[52%_48%] lg:px-10">
+    <section className="relative overflow-hidden bg-white pt-2 sm:pt-4">
+      <div className="mx-auto grid max-w-[1400px] grid-cols-1 items-center gap-10 px-6 py-10 sm:px-8 sm:py-16 lg:grid-cols-[52%_48%] lg:gap-14 lg:px-10">
 
         {/* LEFT */}
         <div className="relative z-10 max-w-[650px] lg:-ml-16">
 
           {/* Small Heading */}
-          <p className="relative left-[-48px] mb-5 text-center text-xs font-bold uppercase tracking-[0.35em] text-green-700">
-  Personalized Math Tutoring
-</p>
+          <p className="relative left-0 mb-5 text-center text-xs font-bold uppercase tracking-[0.35em] text-green-700 sm:left-[-48px]">
+            Personalized Math Tutoring
+          </p>
 
           {/* Main Heading */}
-          <h1 className="text-[42px] font-extrabold leading-[1.05] tracking-[-1.5px] text-gray-900 xl:text-[52px]">
+          <h1 className="text-center text-[36px] font-extrabold leading-[1.05] tracking-[-1.5px] text-gray-900 sm:text-[42px] lg:text-left xl:text-[52px]">
             <span className="block">
               Building Confidence in
             </span>
 
-     <span className="relative left-[-50px] block text-center text-[54px] font-black uppercase tracking-[0.12em] text-green-700 xl:text-[64px]">
-  MATH
+            <span className="relative left-0 block text-center text-[46px] font-black uppercase tracking-[0.12em] text-green-700 sm:left-[-50px] sm:text-[54px] xl:text-[64px]">
+              MATH
             </span>
 
             <span className="block">
-            "One Student at a Time"
+              "One Student at a Time"
             </span>
           </h1>
 
           {/* Description */}
-          <p className="mx-auto -ml-2 mt-5 max-w-[560px] text-center text-[19px] leading-9 text-gray-600">
+          <p className="mx-auto mt-5 max-w-[560px] px-2 text-center text-[17px] leading-8 text-gray-600 sm:px-0 sm:text-[19px] sm:leading-9 lg:-ml-2">
             Personalized tutoring for Elementary, Middle, and High School
             Mathematics, including Algebra, Geometry, SAT/ACT,
             Placement Tests, and EOC preparation.
           </p>
 
           {/* Buttons */}
-          <div className="mt-8 flex flex-wrap justify-center gap-4 lg:-ml-34">
+          <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:-ml-34">
 
             <Link
               href="/contact"
@@ -58,7 +58,7 @@ export default function Hero() {
         </div>
 
         {/* RIGHT */}
-        <div className="relative h-[640px] overflow-visible">
+        <div className="relative h-[340px] overflow-visible sm:h-[500px] lg:h-[640px]">
 
           {/* Background Glow */}
           <div className="absolute right-16 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-green-200/30 blur-3xl" />
