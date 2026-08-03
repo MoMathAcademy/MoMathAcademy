@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import ReviewModal from "./ReviewModal";
-import TestimonialCard from "./TestimonialCard";
 import { supabase } from "@/lib/supabase";
+
+import ReviewModal from "./ReviewModal";
+import ReviewPopup from "./ReviewPopup";
+import TestimonialCard from "./TestimonialCard";
 
 import { Testimonial } from "./types";
 import {
@@ -15,6 +17,9 @@ export default function Testimonials() {
   const [activeTab, setActiveTab] = useState<"parents" | "students">("parents");
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
   const [showReviewModal, setShowReviewModal] = useState(false);
+  const [selectedReview, setSelectedReview] =
+    useState<Testimonial | null>(null);
+  const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
     async function loadTestimonials() {
@@ -43,22 +48,41 @@ export default function Testimonials() {
     (t) => t.role === "student"
   );
 
-  const parentsToDisplay =
-    parentTestimonials.length > 0
-      ? parentTestimonials
-      : sampleParentTestimonials;
+  const parentsToDisplay = [
+    ...parentTestimonials,
+    ...sampleParentTestimonials.filter(
+      (sample) =>
+        !parentTestimonials.some(
+          (real) => real.display_name === sample.display_name
+        )
+    ),
+  ];
 
-  const studentsToDisplay =
-    studentTestimonials.length > 0
-      ? studentTestimonials
-      : sampleStudentTestimonials;
+  const studentsToDisplay = [
+    ...studentTestimonials,
+    ...sampleStudentTestimonials.filter(
+      (sample) =>
+        !studentTestimonials.some(
+          (real) => real.display_name === sample.display_name
+        )
+    ),
+  ];
 
-  return (
+  const allTestimonials =
+    activeTab === "parents"
+      ? parentsToDisplay
+      : studentsToDisplay;
+
+  const testimonialsToShow = showAll
+    ? allTestimonials
+    : allTestimonials.slice(0, 3);
+      return (
     <section
       id="testimonials"
       className="bg-white py-28 scroll-mt-28"
     >
       <div className="mx-auto max-w-7xl px-8">
+
         {/* Heading */}
 
         <div className="text-center">
@@ -75,9 +99,15 @@ export default function Testimonials() {
         {/* Toggle */}
 
         <div className="mt-14 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+
           <div className="inline-flex rounded-full bg-gray-100 p-1 shadow-inner">
+
             <button
-              onClick={() => setActiveTab("parents")}
+              onClick={() => {
+                setActiveTab("parents");
+                setShowAll(false);
+                setSelectedReview(null);
+              }}
               className={`rounded-full px-8 py-3 text-lg font-semibold transition-all duration-300 ${
                 activeTab === "parents"
                   ? "bg-green-700 text-white shadow-lg"
@@ -88,7 +118,11 @@ export default function Testimonials() {
             </button>
 
             <button
-              onClick={() => setActiveTab("students")}
+              onClick={() => {
+                setActiveTab("students");
+                setShowAll(false);
+                setSelectedReview(null);
+              }}
               className={`rounded-full px-8 py-3 text-lg font-semibold transition-all duration-300 ${
                 activeTab === "students"
                   ? "bg-green-700 text-white shadow-lg"
@@ -97,6 +131,7 @@ export default function Testimonials() {
             >
               Students
             </button>
+
           </div>
 
           <button
@@ -105,6 +140,7 @@ export default function Testimonials() {
           >
             ✨ Share Your Experience
           </button>
+
         </div>
 
         {/* Testimonials */}
@@ -114,10 +150,9 @@ export default function Testimonials() {
           className="mt-16 animate-fade"
         >
           <div className="grid gap-8 lg:grid-cols-3">
-            {(activeTab === "parents"
-              ? parentsToDisplay
-              : studentsToDisplay
-            ).map((testimonial) => (
+
+            {testimonialsToShow.map((testimonial) => (
+
               <TestimonialCard
                 key={testimonial.id}
                 quote={testimonial.review}
@@ -128,16 +163,53 @@ export default function Testimonials() {
                     : "Verified Student"
                 }
                 subject={testimonial.course}
+                rating={testimonial.rating}
+                onClick={() => setSelectedReview(testimonial)}
               />
+
             ))}
+
           </div>
+
+          {/* View All */}
+
+          {allTestimonials.length > 3 && (
+
+            <div className="mt-14 flex justify-center">
+
+              <button
+                onClick={() => setShowAll(!showAll)}
+                className="group inline-flex items-center gap-3 rounded-full border-2 border-green-700 px-8 py-4 text-md font-semibold text-green-700 transition-all duration-300 hover:bg-green-700 hover:text-white"
+              >
+                {showAll
+                  ? "Show Less"
+                  : `View All Success Stories (${allTestimonials.length})`}
+
+                <span className="transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
+
+              </button>
+
+            </div>
+
+          )}
+
         </div>
+
       </div>
 
       <ReviewModal
         open={showReviewModal}
         onClose={() => setShowReviewModal(false)}
       />
+
+      <ReviewPopup
+        testimonial={selectedReview}
+        open={selectedReview !== null}
+        onClose={() => setSelectedReview(null)}
+      />
+
     </section>
   );
 }
